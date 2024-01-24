@@ -1,0 +1,101 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background: linear-gradient(to right, blue, turquoise, lightgreen);
+    font-family: 'Beon', sans-serif; /* Use the Beon font */
+}
+
+input[type="text"]::placeholder {
+    text-align: center;
+}
+
+form {
+    position: relative; /* Make the form a relative container for the 'Q' */
+    text-align: center;
+    z-index: 1; /* Make the form appear above the 'Q' */
+}
+
+.input-group {
+    margin: 10px 0;
+}
+
+input[type="text"], button {
+    display: inline-block;
+    width: 70%;
+    padding: 10px;
+    font-size: 1.2em;
+    border-radius: 30px;
+    border: 1px solid black;
+    background-color: rgb(244, 247, 231);
+    z-index: 1;
+    position: relative;
+    box-sizing: border-box; /* Include padding and border in total width */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Add a drop shadow */
+    box-shadow: inset 0px 4px 8px rgba(0, 0, 0, 0.2); /* Add an inner shadow */
+
+}
+
+button {
+    display: inline-block;
+    color: white;
+    width: 70%;
+    padding: 10px;
+    font-size: 1.2em;
+    border-radius: 30px;
+    border: 1px solid black;
+    background: linear-gradient(to bottom, rgb(247, 146, 220), rgba(241, 135, 213, 1)); /* Add a shiny effect */
+    z-index: 1;
+    position: relative;
+    box-sizing: border-box; /* Include padding and border in total width */
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2); /* Add a raised effect */
+}
+
+/* Add a large 'Q' behind the form */
+@keyframes shimmer {
+    0% {
+        background-position: -1000px;
+    }
+    100% {
+        background-position: 1000px;
+    }
+}
+
+form::before {
+    content: 'Q';
+    font-size: 30em;
+    color: rgba(255, 255, 255, 0.25); /* Make the 'Q' more translucent */
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.5), transparent);
+    background-size: 500px;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: shimmer 10s infinite;
+    position: absolute; /* Position the 'Q' absolutely */
+    top: 67%; /* Center the 'Q' vertically */
+    left: 50%; /* Center the 'Q' horizontally */
+    transform: translate(-50%, -50%); /* Adjust the position of the 'Q' */
+    z-index: -1; /* Place the 'Q' behind other elements */
+}
+
+@keyframes shooting-star {
+    0% {
+        left: 0;
+        top: 0;
+    }
+    100% {
+        left: 100%;
+        top: 100%;
+    }
+}
+
+.shooting-star {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background-color: lightblue;
+    border-radius: 50%;
+    animation: shooting-star 2s linear infinite;
+}
+
