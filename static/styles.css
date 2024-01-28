@@ -8,9 +8,17 @@ body {
     font-family: 'Beon', sans-serif; /* Use the Beon font */
 }
 
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 input[type="text"]::placeholder {
     text-align: center;
 }
+
+
 
 form {
     position: relative; /* Make the form a relative container for the 'Q' */
@@ -90,12 +98,38 @@ form::before {
     }
 }
 
-.shooting-star {
+
+.weather-info {
     position: absolute;
-    width: 10px;
-    height: 10px;
-    background-color: lightblue;
-    border-radius: 50%;
-    animation: shooting-star 2s linear infinite;
+    bottom: 50px;
+    border: 1px solid transparent;
+    border: 1px solid silver;
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 10px;
+    padding: 10px;
+    margin: 20px;
+    box-shadow: inset 0px 4px 8px rgba(0.2, 0.2, 0.2, 0.2); /* Add an inner shadow */
+    text-align: center;
 }
 
+.has-weather {
+    border-color: silver;
+}
+
+.close-btn {
+    position: absolute;
+    bottom: 15px; 
+    color: Black;
+    display: block;
+    margin-top: 10px;
+    background: none;
+    border: none;
+    font-size: 1.2em;
+    cursor: pointer;
+    text-align: center;
+    align-items: center;
+}
+
+.weather-info, .close-btn {
+    display: none;
+}

@@ -6,16 +6,31 @@
 </head>
 <body>
     <div class="shooting-star"></div>
-    <form method="POST">
-        <div class="input-group">
-            <input type="text" name="city" placeholder="Enter a city" required>
+    <div class="container">
+        <form method="POST">
+            <div class="input-group">
+                <input type="text" name="city" placeholder="Enter a city" required>
+            </div>
+            <div class="input-group">
+                <button type="submit">Get Weather</button>
+            </div>
+        </form>
+        <div class="weather-info {% if weather %}has-weather{% endif %}">
+            {% if weather %}
+            {{ weather }}
+            {% endif %}
         </div>
-        <div class="input-group">
-            <button type="submit">Get Weather</button>
-        </div>
-    </form>
-    {% if weather %}
-    <p>{{ weather }}</p>
-    {% endif %}
+        <button class="close-btn">x</button>
+    </div>
+    <script>
+        if({% if weather %}true{% else %}false{% endif %}) {
+            document.querySelector('.weather-info').style.display = 'block';
+            document.querySelector('.close-btn').style.display = 'block';
+        }
+        document.querySelector('.close-btn').addEventListener('click', function() {
+            document.querySelector('.weather-info').style.display = 'none';
+            this.style.display = 'none'
+        });
+    </script>
 </body>
 </html>
