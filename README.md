@@ -9,4 +9,4 @@ Back to using traditional CSS for the first time in a while after mainly playing
 
 any feedback appreciated
 
-thank you
+thank you - and i hope the weather's nice where you are
